@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MainToolbarTheme" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:textColorPrimary">@color/textColor</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="MainTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/textColor</item>
+        <item name="tabSelectedTextColor">@color/darkText</item>
+        <item name="tabBackground">@drawable/tab_color_selector</item>
+    </style>
+
+    <style name="RoomToggleButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">@drawable/room_toggle_selector</item>
+        <item name="android:textColorPrimary">@drawable/room_toggle_text_selector</item>
+    </style>
+
+    <style name="TextViewParamsStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+</resources>

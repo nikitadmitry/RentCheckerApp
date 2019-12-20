@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="apply">Принять</string>
+    <string name="call">Позвонить</string>
+    <string name="check_service">Служба поиска</string>
+    <string name="items" translatable="false">Варианты</string>
+    <string name="map" translatable="false">Карта</string>
+    <string name="owner">Владелец</string>
+    <string name="photos">Фото:</string>
+    <string name="price">Цена</string>
+    <string name="rooms">Комнаты</string>
+    <string name="settings">Настройки</string>
+    <string name="start_stop_checking">Запустить / остановить поиск</string>
+    <string name="stop">Остановить</string>
+    <string name="minsk_city">Минск</string>
+    <string name="city_text">Город</string>
+    <string name="dial_error">Ваше устройство не может звонить!</string>
+    <string name="new_items_found">Найдены новые квартиры:</string>
+    <string name="nothing_found">Ничего не найдено</string>
+    <string name="sites_text">Сайты</string>
+    <string name="stop_service_warning">Остановите поиск перед открытием параметров</string>
+</resources>

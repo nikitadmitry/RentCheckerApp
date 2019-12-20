@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name" translatable="false">Rent Checker</string>
+    <string name="start_stop_checking">Start / Stop Check</string>
+    <string name="items">Items</string>
+    <string name="map">Map</string>
+    <string name="items_fragment" translatable="false">Items fragment</string>
+    <string name="map_fragment" translatable="false">Map fragment</string>
+    <string name="settings">Settings</string>
+    <string name="divider_line" translatable="false">-</string>
+    <string name="photos">Photos:</string>
+    <string name="call">Call</string>
+    <string name="apply">Apply</string>
+    <string name="price">Price</string>
+    <string name="rooms">Rooms</string>
+    <string name="_1" translatable="false">1</string>
+    <string name="_2" translatable="false">2</string>
+    <string name="_3" translatable="false">3</string>
+    <string name="_4" translatable="false">4</string>
+    <string name="owner">Owner</string>
+    <string name="photo_item_info" translatable="false">Photo item info</string>
+    <string name="photo_item_large" translatable="false">Photo Item Large</string>
+    <string name="stop">Stop</string>
+    <string name="check_service">Check Service</string>
+    <string name="dial_error">Your device cannot call a number!</string>
+    <string name="nothing_found">Nothing found</string>
+    <string name="new_items_found">New items found:</string>
+    <string name="city_text">City</string>
+    <string name="minsk_city">Minsk</string>
+    <string name="sites_text">Sites</string>
+    <string name="onliner_check" translatable="false">Onliner</string>
+    <string name="stop_service_warning">Stop check service before opening parameters</string>
+</resources>

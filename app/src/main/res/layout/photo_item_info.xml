@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="by.slowar.rentchecker.ui.items.info.PhotoItemInfoBinding">
+
+        <import type="android.widget.ImageView" />
+
+        <variable
+            name="photoUrl"
+            type="String" />
+
+        <variable
+            name="listener"
+            type="by.slowar.rentchecker.ui.items.info.adapter.PhotoItemInfoAdapter.Listener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/photo_item_size"
+            android:layout_height="@dimen/photo_item_size"
+            android:contentDescription="@string/photo_item_info"
+            android:onClick="@{(view) -> listener.onImageClick((ImageView)view)}"
+            app:srcUrl="@{photoUrl}"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
+</layout>

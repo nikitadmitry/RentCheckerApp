@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="by.slowar.rentchecker.ui.parameters.ParametersActivityBinding">
+
+        <import type="by.slowar.rentchecker.common.Constants" />
+
+        <import type="by.slowar.rentchecker.data.local.ParametersPreferences.RoomType" />
+
+        <import type="by.slowar.rentchecker.data.items.ItemLocation.City" />
+
+        <import type="by.slowar.rentchecker.data.items.RentItemsHelper.Site" />
+
+        <variable
+            name="presenter"
+            type="by.slowar.rentchecker.ui.parameters.ParametersMvp.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.parameters.ParametersActivity">
+
+        <include
+            android:id="@+id/parameters_toolbar"
+            layout="@layout/main_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/price_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/parameters_toolbar">
+
+            <TextView
+                android:id="@+id/value_range_text"
+                style="@style/TextViewParamsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:text='@{Constants.MIN_PRICE + " - " + Constants.MAX_PRICE}'
+                app:layout_constraintBottom_toBottomOf="@+id/price_text"
+                app:layout_constraintStart_toEndOf="@+id/price_text"
+                app:layout_constraintTop_toTopOf="@+id/price_text"
+                tools:text="50 - 500" />
+
+            <TextView
+                android:id="@+id/price_text"
+                style="@style/TextViewParamsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                android:id="@+id/price_range_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                app:bar_color="@color/colorPrimaryDark"
+                app:bar_highlight_color="@color/colorAccent"
+                app:corner_radius="10"
+                app:data_type="_integer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price_text"
+                app:left_thumb_color="@color/colorPrimary"
+                app:left_thumb_color_pressed="@color/colorPrimaryDark"
+                app:right_thumb_color="@color/colorPrimary"
+                app:right_thumb_color_pressed="@color/colorPrimaryDark"
+                app:steps="1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rooms_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price_layout">
+
+            <TextView
+                android:id="@+id/rooms_text"
+                style="@style/TextViewParamsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/rooms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rooms_buttons_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rooms_text">
+
+                <ToggleButton
+                    android:id="@+id/room_1"
+                    style="@style/RoomToggleButtonStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="false"
+                    android:onCheckedChanged="@{(view, isChecked) -> presenter.roomChanged(RoomType.Room1, isChecked)}"
+                    android:text="@string/_1"
+                    android:textOff="@string/_1"
+                    android:textOn="@string/_1"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/room_2"
+                    style="@style/RoomToggleButtonStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:checked="false"
+                    android:onCheckedChanged="@{(view, isChecked) -> presenter.roomChanged(RoomType.Room2, isChecked)}"
+                    android:text="@string/_2"
+                    android:textOff="@string/_2"
+                    android:textOn="@string/_2"
+                    app:layout_constraintBottom_toBottomOf="@+id/room_1"
+                    app:layout_constraintStart_toEndOf="@+id/room_1"
+                    app:layout_constraintTop_toTopOf="@+id/room_1" />
+
+                <ToggleButton
+                    android:id="@+id/room_3"
+                    style="@style/RoomToggleButtonStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:checked="false"
+                    android:onCheckedChanged="@{(view, isChecked) -> presenter.roomChanged(RoomType.Room3, isChecked)}"
+                    android:text="@string/_3"
+                    android:textOff="@string/_3"
+                    android:textOn="@string/_3"
+                    app:layout_constraintBottom_toBottomOf="@+id/room_2"
+                    app:layout_constraintStart_toEndOf="@+id/room_2"
+                    app:layout_constraintTop_toTopOf="@+id/room_2" />
+
+                <ToggleButton
+                    android:id="@+id/room_4"
+                    style="@style/RoomToggleButtonStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:checked="false"
+                    android:onCheckedChanged="@{(view, isChecked) -> presenter.roomChanged(RoomType.Room4, isChecked)}"
+                    android:text="@string/_4"
+                    android:textOff="@string/_4"
+                    android:textOn="@string/_4"
+                    app:layout_constraintBottom_toBottomOf="@+id/room_3"
+                    app:layout_constraintStart_toEndOf="@+id/room_3"
+                    app:layout_constraintTop_toTopOf="@+id/room_3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/owner_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rooms_layout">
+
+            <TextView
+                android:id="@+id/owner_text"
+                style="@style/TextViewParamsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/owner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Switch
+                android:id="@+id/owner_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:onCheckedChanged="@{(view, isChecked) -> presenter.ownerChanged(isChecked)}"
+                app:layout_constraintBottom_toBottomOf="@+id/owner_text"
+                app:layout_constraintStart_toEndOf="@+id/owner_text"
+                app:layout_constraintTop_toTopOf="@+id/owner_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/city_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/owner_layout">
+
+            <TextView
+                android:id="@+id/city_text"
+                style="@style/TextViewParamsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/city_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/cities_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:checkedButton="@id/minsk_radio"
+                android:onCheckedChanged="@{(view, isChecked) -> presenter.cityChanged(City.Minsk)}"
+                app:layout_constraintBottom_toBottomOf="@+id/city_text"
+                app:layout_constraintStart_toEndOf="@+id/city_text"
+                app:layout_constraintTop_toTopOf="@+id/city_text">
+
+                <RadioButton
+                    android:id="@+id/minsk_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/minsk_city" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sites_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/city_layout">
+
+            <TextView
+                android:id="@+id/sites_text"
+                style="@style/TextViewParamsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/sites_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sites_checkboxes_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sites_text"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <CheckBox
+                    android:id="@+id/onliner_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/onliner_check"
+                    android:onCheckedChanged="@{(view, isChecked) -> presenter.siteChanged(Site.Onliner, isChecked)}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
