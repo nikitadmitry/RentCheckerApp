@@ -1,6 +1,6 @@
 package by.slowar.rentchecker;
 
-import android.app.Application;
+import androidx.multidex.MultiDexApplication;
 
 import by.slowar.rentchecker.di.components.AppComponent;
 import by.slowar.rentchecker.di.components.DaggerAppComponent;
@@ -10,7 +10,7 @@ import by.slowar.rentchecker.di.modules.AppModule;
  * Created by SlowAR on 03.12.2019.
  */
 
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     private static AppComponent appComponent;
 
