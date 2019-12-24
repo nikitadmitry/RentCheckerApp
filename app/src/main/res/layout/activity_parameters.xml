@@ -9,7 +9,7 @@
 
         <import type="by.slowar.rentchecker.data.local.ParametersPreferences.RoomType" />
 
-        <import type="by.slowar.rentchecker.data.items.ItemLocation.City" />
+        <import type="by.slowar.rentchecker.data.model.ItemLocation.City" />
 
         <import type="by.slowar.rentchecker.data.items.RentItemsHelper.Site" />
 

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import by.slowar.rentchecker.App;
-import by.slowar.rentchecker.data.items.ItemLocation;
+import by.slowar.rentchecker.data.model.ItemLocation;
 import by.slowar.rentchecker.data.items.ItemsDataLoader;
 import by.slowar.rentchecker.data.items.RentItemsHelper;
 import by.slowar.rentchecker.data.items.onliner.OnlinerItemsPojo;

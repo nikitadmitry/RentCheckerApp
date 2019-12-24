@@ -3,8 +3,6 @@ package by.slowar.rentchecker.data.model;
 import java.io.Serializable;
 import java.util.List;
 
-import by.slowar.rentchecker.data.items.ItemLocation;
-
 import static by.slowar.rentchecker.data.local.ParametersPreferences.RoomType;
 
 /**

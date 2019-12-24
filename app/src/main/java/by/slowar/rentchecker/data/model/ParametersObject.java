@@ -3,7 +3,6 @@ package by.slowar.rentchecker.data.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import by.slowar.rentchecker.data.items.ItemLocation;
 import by.slowar.rentchecker.data.items.RentItemsHelper;
 import by.slowar.rentchecker.data.local.ParametersPreferences;
 

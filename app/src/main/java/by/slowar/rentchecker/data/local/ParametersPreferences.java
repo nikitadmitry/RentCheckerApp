@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import by.slowar.rentchecker.common.Constants;
-import by.slowar.rentchecker.data.items.ItemLocation;
+import by.slowar.rentchecker.data.model.ItemLocation;
 import by.slowar.rentchecker.data.items.RentItemsHelper;
 import by.slowar.rentchecker.data.model.ParametersObject;
 

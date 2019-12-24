@@ -2,7 +2,7 @@ package by.slowar.rentchecker.ui.parameters;
 
 import by.slowar.mvp.presenter.MvpPresenter;
 import by.slowar.mvp.view.MvpView;
-import by.slowar.rentchecker.data.items.ItemLocation;
+import by.slowar.rentchecker.data.model.ItemLocation;
 import by.slowar.rentchecker.data.items.RentItemsHelper;
 import by.slowar.rentchecker.data.local.ParametersPreferences;
 import by.slowar.rentchecker.data.model.ParametersObject;

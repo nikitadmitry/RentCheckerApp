@@ -26,7 +26,7 @@ import by.slowar.rentchecker.App;
 import by.slowar.rentchecker.R;
 import by.slowar.rentchecker.common.Constants;
 import by.slowar.rentchecker.common.mvp.MvpActivity;
-import by.slowar.rentchecker.data.items.ItemLocation;
+import by.slowar.rentchecker.data.model.ItemLocation;
 import by.slowar.rentchecker.data.items.RentItemsHelper;
 import by.slowar.rentchecker.data.local.ParametersPreferences;
 import by.slowar.rentchecker.data.model.ParametersObject;

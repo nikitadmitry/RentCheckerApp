@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 
 import by.slowar.rentchecker.App;
-import by.slowar.rentchecker.data.items.ItemLocation;
+import by.slowar.rentchecker.data.model.ItemLocation;
 import by.slowar.rentchecker.data.items.ItemsPojo;
 import by.slowar.rentchecker.data.items.onliner.Apartment;
 import by.slowar.rentchecker.data.items.onliner.Location;

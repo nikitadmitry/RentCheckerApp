@@ -28,4 +28,6 @@ public interface ScreenComponent {
     void inject(MapFragment mapFragment);
 
     void inject(ParametersActivity parametersActivity);
+
+    void inject(CheckService checkService);
 }

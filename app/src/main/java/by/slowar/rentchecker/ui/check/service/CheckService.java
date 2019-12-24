@@ -24,6 +24,7 @@ import by.slowar.rentchecker.App;
 import by.slowar.rentchecker.R;
 import by.slowar.rentchecker.common.mvp.MvpService;
 import by.slowar.rentchecker.data.model.Item;
+import by.slowar.rentchecker.di.modules.RouterModule;
 import by.slowar.rentchecker.ui.check.CheckActivity;
 
 /**
@@ -45,7 +46,7 @@ public class CheckService extends MvpService<CheckServiceMvp.View> implements Ch
 
     @Override
     public void onCreate() {
-        App.getAppComponent().inject(this);
+        App.getAppComponent().getScreenComponent(new RouterModule(this)).inject(this);
         super.onCreate();
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         binder = new CheckBinder();

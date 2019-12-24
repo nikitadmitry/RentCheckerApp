@@ -9,8 +9,6 @@ import by.slowar.rentchecker.di.scopes.ApplicationScope;
 import by.slowar.rentchecker.util.SchedulersUtil;
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -27,16 +25,8 @@ public class RemoteStorageModule {
     @OnlinerGsonQualifier
     @Provides
     OnlinerPageSourceApi provideGsonOnlinerApi() {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
-                .build();
-
         Retrofit onlinerRetrofit = new Retrofit.Builder()
                 .baseUrl("https://ak.api.onliner.by/search/")
-                .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

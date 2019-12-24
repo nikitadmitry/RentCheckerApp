@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import by.slowar.mvp.presenter.BasePresenter;
 import by.slowar.rentchecker.common.RouterStub;
-import by.slowar.rentchecker.data.items.ItemLocation;
+import by.slowar.rentchecker.data.model.ItemLocation;
 import by.slowar.rentchecker.data.items.RentItemsHelper;
 import by.slowar.rentchecker.data.local.ParametersPreferences;
 import by.slowar.rentchecker.data.model.ParametersObject;
