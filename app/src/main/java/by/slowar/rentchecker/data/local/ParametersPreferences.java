@@ -72,10 +72,6 @@ public class ParametersPreferences {
         return preferences.getBoolean(roomType.name(), false);
     }
 
-    public boolean isOwner() {
-        return preferences.getBoolean(Parameters.Owner.name(), false);
-    }
-
     public String getCity() {
         return preferences.getString(Parameters.City.name(), ItemLocation.City.Minsk.name());
     }
@@ -91,7 +87,7 @@ public class ParametersPreferences {
         for (RoomType value : RoomType.values()) {
             parameters.putRoom(value, getRoom(value));
         }
-        parameters.setOwner(isOwner());
+
         parameters.setCity(ItemLocation.City.valueOf(getCity()));
         for (RentItemsHelper.Site value : RentItemsHelper.Site.values()) {
             parameters.putSite(value, getSite(value));

@@ -51,10 +51,9 @@ public class OnlinerDataLoader implements DataLoader {
         ItemLocation cityLocation = ItemLocation.getConstantLocation(ItemLocation.City.valueOf(parametersPreferences.getCity()));
         int priceMin = params.getMinPrice();
         int priceMax = params.getMaxPrice();
-        boolean isOwner = params.isOwner();
 
         float coordinatesOffset = 0.5f;
-        onlinerPageSourceApi.pageSource(priceMin, priceMax, isOwner,
+        onlinerPageSourceApi.pageSource(priceMin * 1000, priceMax * 1000,
                 cityLocation.getLatitude(), cityLocation.getLongitude(),
                 cityLocation.getLatitude() + coordinatesOffset, cityLocation.getLongitude() + coordinatesOffset,
                 rooms)

@@ -123,7 +123,6 @@ public class ParametersActivity extends MvpActivity<ParametersMvp.View> implemen
 
         setRoomsButtons(parameters);
 
-        binding.ownerSwitch.setChecked(parameters.isOwner());
         binding.citiesGroup.check(getCityRadioButtonId(parameters.getCity()));
 
         setSitesCheckboxes(parameters);

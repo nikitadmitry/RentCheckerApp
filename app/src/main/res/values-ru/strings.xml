@@ -5,9 +5,8 @@
     <string name="check_service">Служба поиска</string>
     <string name="items" translatable="false">Варианты</string>
     <string name="map" translatable="false">Карта</string>
-    <string name="owner">Владелец</string>
     <string name="photos">Фото:</string>
-    <string name="price">Цена</string>
+    <string name="price">Цена (тыс. $)</string>
     <string name="rooms">Комнаты</string>
     <string name="settings">Настройки</string>
     <string name="start_stop_checking">Запустить / остановить поиск</string>

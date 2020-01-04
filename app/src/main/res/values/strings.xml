@@ -10,13 +10,12 @@
     <string name="photos">Photos:</string>
     <string name="call">Call</string>
     <string name="apply">Apply</string>
-    <string name="price">Price</string>
+    <string name="price">Price ($K)</string>
     <string name="rooms">Rooms</string>
     <string name="_1" translatable="false">1</string>
     <string name="_2" translatable="false">2</string>
     <string name="_3" translatable="false">3</string>
     <string name="_4" translatable="false">4</string>
-    <string name="owner">Owner</string>
     <string name="photo_item_info" translatable="false">Photo item info</string>
     <string name="photo_item_large" translatable="false">Photo Item Large</string>
     <string name="stop">Stop</string>

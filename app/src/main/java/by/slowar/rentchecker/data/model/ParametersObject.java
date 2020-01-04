@@ -15,7 +15,6 @@ public class ParametersObject {
     private int minPrice;
     private int maxPrice;
     private Map<ParametersPreferences.RoomType, Boolean> roomsMap;
-    private boolean isOwner;
     private ItemLocation.City city;
     private Map<RentItemsHelper.Site, Boolean> sitesMap;
 
@@ -46,14 +45,6 @@ public class ParametersObject {
 
     public Map<ParametersPreferences.RoomType, Boolean> getRoomsMap() {
         return roomsMap;
-    }
-
-    public boolean isOwner() {
-        return isOwner;
-    }
-
-    public void setOwner(boolean owner) {
-        isOwner = owner;
     }
 
     public ItemLocation.City getCity() {

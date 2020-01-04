@@ -16,7 +16,7 @@ public interface OnlinerPageSourceApi {
     @Headers({"Accept: application/json"})
     @GET("apartments?currency=usd&order=created_at%3Adesc&page=1")
     Single<OnlinerItemsPojo> pageSource(@Query("price[min]") int priceMin, @Query("price[max]") int priceMax,
-                                        @Query("only_owner") boolean owner, @Query("bounds[lb][lat]") double lblat,
+                                        @Query("bounds[lb][lat]") double lblat,
                                         @Query("bounds[lb][long]") double lblong, @Query("bounds[rt][lat]") double rtlat,
                                         @Query("bounds[rt][long]") double rtlong, @Query("rent_type[]") String... rooms);
 

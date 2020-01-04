@@ -103,7 +103,7 @@ public class OnlinerItemParser implements ItemParser {
         float priceUsd = Float.parseFloat(price.getAmount());
         ParametersPreferences.RoomType roomType = ParametersPreferences.RoomType.values()[Integer.parseInt(apartment.getRentType().substring(0, 1)) - 1];
 
-        Item item = new Item(location.getAddress(), phone, priceUsd, roomType, owner, params.isOwner(), photosUrls, itemLocation);
+        Item item = new Item(location.getAddress(), phone, priceUsd, roomType, owner, photosUrls, itemLocation);
         listener.onParsedListener(item);
     }
 }

@@ -77,7 +77,6 @@ public class RentItemsHelper implements ItemsDataLoader.OnSiteDataLoadedListener
         while (iterator.hasNext()) {
             Item item = iterator.next();
             boolean price = item.getPrice() <= params.getMaxPrice() && item.getPrice() >= params.getMinPrice();
-            boolean owner = item.isOwner() && params.isOwner();
             boolean room = false;
             for (RoomType value : RoomType.values()) {
                 if (params.getRoom(value) && item.getRoomType() == value) {
@@ -86,7 +85,7 @@ public class RentItemsHelper implements ItemsDataLoader.OnSiteDataLoadedListener
                 }
             }
 
-            boolean isRemains = price && owner && room;
+            boolean isRemains = price && room;
             if (!isRemains) {
                 iterator.remove();
             }

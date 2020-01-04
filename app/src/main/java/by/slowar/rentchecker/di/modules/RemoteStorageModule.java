@@ -26,7 +26,7 @@ public class RemoteStorageModule {
     @Provides
     OnlinerPageSourceApi provideGsonOnlinerApi() {
         Retrofit onlinerRetrofit = new Retrofit.Builder()
-                .baseUrl("https://ak.api.onliner.by/search/")
+                .baseUrl("https://pk.api.onliner.by/search/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -38,7 +38,7 @@ public class RemoteStorageModule {
     @Provides
     OnlinerPageSourceApi provideScalarsOnlinerApi() {
         Retrofit onlinerRetrofit = new Retrofit.Builder()
-                .baseUrl("https://r.onliner.by/ak/")
+                .baseUrl("https://r.onliner.by/pk/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
