@@ -12,9 +12,9 @@ public class Apartment {
     @SerializedName("price")
     @Expose
     private Price price;
-    @SerializedName("rent_type")
+    @SerializedName("number_of_rooms")
     @Expose
-    private String rentType;
+    private Integer numberOfRooms;
     @SerializedName("location")
     @Expose
     private Location location;
@@ -53,12 +53,12 @@ public class Apartment {
         this.price = price;
     }
 
-    public String getRentType() {
-        return rentType;
+    public Integer getNumberOfRooms() {
+        return numberOfRooms;
     }
 
-    public void setRentType(String rentType) {
-        this.rentType = rentType;
+    public void setNumberOfRooms(Integer numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
 
     public Location getLocation() {
